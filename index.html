@@ -3,7 +3,7 @@
   <head id="head"></head>
 
   <body>
-    <div class="header"></div>
+    <div class="header" id="header"></div>
 
     <div class="sidebar" id="sidebar"></div>
 
@@ -11,21 +11,10 @@
       <h1>Conteúdo principal</h1>
     </div>
 
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
-
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
-
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael.min.js"></script>
-    <script src="assets/js/chart.js"></script>
-
-    <script src="assets/js/app.js"></script>
+    <div id="footer"></div>
 
     <script>
-    async function incluirHead(url, elemento) {
+    async function incluirHtml(url, elemento) {
       try {
         const resposta = await fetch(url);
         const html = await resposta.text();
@@ -35,7 +24,10 @@
       }
     }
 
-    incluirHead("head.html", "#head");
+    incluirHtml("head.html", "#head");
+    incluirHtml("footer.html", "#footer");
+    incluirHtml("sidebar.html", "#sidebar");
+    incluirHtml("header.html", "#header");
   </script>
   </body>
 </html>
