@@ -1,6 +1,8 @@
 # 0.0.1
 
-- Página de Login
-- Página de Esqueci Senha
 - Página Inicial
-- Arquivos Estáticos do Bootstrap
+- Página de Login
+- Barra de Navegação Lateral
+- Barra de Navegação Superior
+- Tema do Site
+- Tema claro
