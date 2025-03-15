@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div id="head-container"></div>
-  <body>
-    <script>
-      async function incluirHTML(url, elemento) {
-        try {
-          const resposta = await fetch(url);
-          const html = await resposta.text();
-          document.querySelector(elemento).outerHTML = html;
-        } catch (erro) {
-          console.error("Erro ao carregar HTML:", erro);
-        }
-      }
+  <div id="layout-container"></div>
 
-      incluirHTML("head.html", "#head-container");
-    </script>
-  </body>
+  <script>
+    async function incluirLayout(url, elemento) {
+      try {
+        const resposta = await fetch(url);
+        const html = await resposta.text();
+        document.querySelector(elemento).outerHTML = html;
+      } catch (erro) {
+        console.error("Erro ao carregar o layout:", erro);
+      }
+    }
+
+    incluirLayout("layout.html", "#layout-container");
+  </script>
 </html>

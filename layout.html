@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onix Airports</title>
+  </head>
+
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <h1>Conteúdo principal</h1>
+      <p>Este é um layout base.</p>
+    </main>
+
+    <script>
+      async function incluirHTML(url, elemento) {
+        try {
+          const resposta = await fetch(url);
+          const html = await resposta.text();
+          document.querySelector(elemento).outerHTML = html;
+        } catch (erro) {
+          console.error("Erro ao carregar HTML:", erro);
+        }
+      }
+
+       incluirHTML("header.html", "#header-container");
+    </script>
+  </body>
+</html>
