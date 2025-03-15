@@ -15,14 +15,14 @@
 
     <script>
     async function incluirHtml(url, elemento) {
-      try {
-        const resposta = await fetch(url);
-        const html = await resposta.text();
-        document.querySelector(elemento).outerHTML = html;
-      } catch (erro) {
-        console.error("Erro ao carregar o head.html:", erro);
+        try {
+          const resposta = await fetch(url);
+          const html = await resposta.text();
+          document.querySelector(elemento).innerHTML = html;
+        } catch (erro) {
+          console.error(`Erro ao carregar ${url}:`, erro);
+        }
       }
-    }
 
     incluirHtml("head.html", "#head");
     incluirHtml("footer.html", "#footer");
