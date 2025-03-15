@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="head"></head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="account-content">
+        <div class="container">
+          <div class="account-logo">
+            <a href="index.html">
+              <img src="assets/img/logo2.png" alt="Dreamguy's Technologies">
+            </a>
+          </div>
+          <div class="account-box">
+            <div class="account-wrapper">
+              <h3 class="account-title">Login</h3>
+              <p class="account-subtitle">Access to our dashboard</p>
+              <form action="index.html">
+								<div class="form-group">
+									<label>Email Address</label>
+									<input class="form-control" type="text">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col">
+											<label>Password</label>
+										</div>
+										<div class="col-auto">
+											<a class="text-muted" href="forgot-password.html">
+												Forgot password?
+											</a>
+										</div>
+									</div>
+									<input class="form-control" type="password">
+								</div>
+								<div class="form-group text-center">
+									<button class="btn btn-primary account-btn" type="submit">Login</button>
+								</div>
+								<div class="account-footer">
+									<p>Don't have an account yet? <a href="register.html">Register</a></p>
+								</div>
+							</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+      async function incluirHtml(url, elemento) {
+        try {
+          const resposta = await fetch(url);
+          const html = await resposta.text();
+          document.querySelector(elemento).innerHTML = html;
+        } catch (erro) {
+          console.error(`Erro ao carregar ${url}:`, erro);
+        }
+      }
+
+      incluirHtml("head.html", "#head");
+      incluirHtml("footer.html", "#footer");
+    </script>
+  </body>
+</html>
