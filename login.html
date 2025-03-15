@@ -8,7 +8,7 @@
         <div class="container">
           <div class="account-logo">
             <a href="index.html">
-              <img src="assets/img/logo2.png" alt="Dreamguy's Technologies">
+              <img src="assets/img/logo2.png" alt="logo">
             </a>
           </div>
           <div class="account-box">
@@ -49,18 +49,18 @@
     <div id="footer"></div>
 
     <script>
-      async function incluirHtml(url, elemento) {
+      async function includeHtml(url, element) {
         try {
-          const resposta = await fetch(url);
-          const html = await resposta.text();
-          document.querySelector(elemento).innerHTML = html;
-        } catch (erro) {
-          console.error(`Erro ao carregar ${url}:`, erro);
+          const response = await fetch(url);
+          const html = await response.text();
+          document.querySelector(element).innerHTML = html;
+        } catch (error) {
+          console.error(`Error loading ${url}:`, error);
         }
       }
 
-      incluirHtml("head.html", "#head");
-      incluirHtml("footer.html", "#footer");
+      includeHtml("head.html", "#head");
+      includeHtml("footer.html", "#footer");
     </script>
   </body>
 </html>
