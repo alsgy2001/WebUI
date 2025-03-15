@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div id="layout-container"></div>
+  <head id="head"></head>
 
-  <script>
-    async function incluirLayout(url, elemento) {
+  <body>
+    <div class="header"></div>
+
+    <div class="sidebar" id="sidebar"></div>
+
+    <div class="page-wrapper">
+      <h1>Conteúdo principal</h1>
+    </div>
+
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script>
+    async function incluirHead(url, elemento) {
       try {
         const resposta = await fetch(url);
         const html = await resposta.text();
         document.querySelector(elemento).outerHTML = html;
       } catch (erro) {
-        console.error("Erro ao carregar o layout:", erro);
+        console.error("Erro ao carregar o head.html:", erro);
       }
     }
 
-    incluirLayout("layout.html", "#layout-container");
+    incluirHead("head.html", "#head");
   </script>
+  </body>
 </html>
